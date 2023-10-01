@@ -1,5 +1,79 @@
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
 header {
+  box-sizing: border-box;
   width: 100%;
-  height: 100px;
-  background-color: rgb(50,50,50);
+  height: 60px;
+  border-bottom: 1px solid rgb(20,20,20);
+}
+header #headerContent{
+  height: 100%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+header #headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header .headerButton {
+  background-color: rgb(20,20,20);
+  color: rgb(240,240,240);
+  border: 0;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+header #changeTheme svg:first-child {
+  display: none;
+}
+header #changeTheme svg:last-child {
+  display: block;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: rgb(20,20,20);
+}
+
+.dark header {
+  border-bottom: 1px solid rgb(240,240,240);
+}
+.dark header h1 {
+  color: rgb(240,240,240);
+}
+.dark header .headerButton {
+  background-color: rgb(240,240,240);
+  color: rgb(20,20,20);
+}
+.dark header #changeTheme svg:first-child {
+  display: block;
+}
+.dark header #changeTheme svg:last-child {
+  display: none;
 }
