@@ -1,5 +1,171 @@
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: system-ui;
+  transition: background-color 300ms;
+}
+
 header {
+  box-sizing: border-box;
   width: 100%;
-  height: 100px;
-  background-color: rgb(50,50,50);
+  height: 60px;
+  border-bottom: 1px solid rgb(20,20,20);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  transition: border-bottom 300ms;
+}
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: color 300ms;
+}
+header #headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header .headerButton {
+  background-color: rgb(20,20,20);
+  color: rgb(240,240,240);
+  border: 0;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+header #changeTheme {
+  overflow: hidden;
+  position: relative;
+}
+header #changeTheme #changeThemeIcons {
+  position: absolute;
+  left: 0;
+  width: 64px;
+  display: flex;
+  justify-content: space-around;
+  transition: left 300ms;
+}
+
+main {
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+main #mainContent {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1px;
+  background-color: rgb(20,20,20);
+  transition: background-color 300ms;
+}
+main section {
+  background-color: white;
+  transition: background-color 300ms;
+}
+main #shadowPreviewContent {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main #shadowPreviewContent #shadowPreview {
+  height: 400px;
+  width: 400px;
+  background-color: #284bc0;
+}
+main #codePreview {
+}
+main #shadowListContent {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+main #shadowListContent .shadow {
+  border-bottom: 1px solid rgb(20,20,20);
+}
+main #shadowListContent .shadow .shadowCollapse {
+  overflow: hidden;
+  height: 0;
+  transition: height 300ms;
+}
+main #shadowListContent .shadow.show .shadowCollapse {
+  overflow: hidden;
+  height: min-content;
+}
+main #shadowListContent .shadowTitle {
+  padding: 12px 16px;
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+}
+main #shadowListContent .shadowProperties {
+  display: grid;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid rgb(150,150,150);
+}
+main #shadowListContent .shadowProperty {
+  display: grid;
+}
+.shadowLabelContent {
+  display: flex;
+  justify-content: space-between;
+}
+.shadowValueContent {
+  width: 70px;
+  display: flex;
+  gap: 8px;
+}
+.shadowValueContent input {
+  width: 100%;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: rgb(20,20,20);
+}
+
+.dark header {
+  border-bottom: 1px solid rgb(240,240,240);
+}
+.dark header h1 {
+  color: rgb(240,240,240);
+}
+.dark header .headerButton {
+  background-color: rgb(240,240,240);
+  color: rgb(20,20,20);
+}
+.dark header #changeTheme #changeThemeIcons {
+  left: -32px;
+  transition: left 300ms;
+}
+.dark main #mainContent {
+  background-color: rgb(240,240,240);
+}
+.dark main section {
+  background-color: rgb(20,20,20);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
