@@ -52,12 +52,13 @@
   <main>
     <div id="mainContent">
       <section id="codePreviewContent">
-
+        <div id="codePreview">
+          box-shadow: 0px 0px 0px 0px #323232;
+        </div>
+        <button id="copyCode">COPY CODE</button>
       </section>
       <section id="shadowPreviewContent">
-        <span id="shadowPreview"></span>
-        <div class="shadowPreviewControls">
-          <label>Background Color</label>
+        <div id="shadowPreview">
           <input type="color" id="backgroundColorShadowPreview" value="#284bc0">
         </div>
       </section>
@@ -70,63 +71,67 @@
                 <div class="shadowLabelContent">
                   <label>Horizontal Offset</label>
                   <div class="shadowValueContent">
-                    <input type="number" min="-200" max="200" value="0" step="1">
+                    <input class="horizontalOffset" type="number" min="-200" max="200" value="0" step="1">
                     <span>PX</span>
                   </div>
                 </div>
-                <input class="horizontalOffset range" type="range" id="horizontalOffset1" min="-200" max="200" value="0" step="1">
+                <input class="horizontalOffset" type="range" id="horizontalOffset1" min="-200" max="200" value="0" step="1">
               </div>
               <div class="shadowProperty">
                 <div class="shadowLabelContent">
                   <label>Vertical Offset</label>
                   <div class="shadowValueContent">
-                    <input type="number" min="-200" max="200" value="0" step="1">
+                    <input class="verticalOffset" type="number" min="-200" max="200" value="0" step="1">
                     <span>PX</span>
                   </div>
                 </div>
-                <input class="verticalOffset range" type="range" id="verticalOffset1" min="-200" max="200" value="0" step="1">
+                <input class="verticalOffset" type="range" id="verticalOffset1" min="-200" max="200" value="0" step="1">
               </div>
               <div class="shadowProperty">
                 <div class="shadowLabelContent">
                   <label>Blur Radius</label>
                   <div class="shadowValueContent">
-                    <input type="number" min="-200" max="200" value="0" step="1">
+                    <input class="blurRadius" type="number" min="-200" max="200" value="0" step="1">
                     <span>PX</span>
                   </div>
                 </div>
-                <input class="blurRadius range" type="range" id="blurRadius1" min="-200" max="200" value="0" step="1">
+                <input class="blurRadius" type="range" id="blurRadius1" min="-200" max="200" value="0" step="1">
               </div>
               <div class="shadowProperty">
                 <div class="shadowLabelContent">
                   <label>Spread Radius</label>
                   <div class="shadowValueContent">
-                    <input type="number" min="-200" max="200" value="0" step="1">
+                    <input class="spreadRadius" type="number" min="-200" max="200" value="0" step="1">
                     <span>PX</span>
                   </div>
                 </div>
-                <input class="spreadRadius range" type="range" id="spreadRadius1" min="-200" max="200" value="0" step="1">
+                <input class="spreadRadius" type="range" id="spreadRadius1" min="-200" max="200" value="0" step="1">
               </div>
-              <div class="shadowProperty shadowColor">
-                <div class="shadowLabelContent">
+              <div class="shadowProperty">
+                <div class="shadowLabelContent horizontal">
                   <label>Shadow Color</label>
                   <div class="shadowValueContent">
-                    <input type="text" value="#284bc0">
+                    <input class="shadowColor" type="text" value="#323232">
                   </div>
                 </div>
-                <input class="shadowColor" type="color" id="shadowColor1">
+                <input class="shadowColor" style="width: 100%;" type="color" id="shadowColor1" value="#323232">
               </div>
               <div class="shadowProperty">
                 <div class="shadowLabelContent">
                   <label>Shadow Opacity</label>
                   <div class="shadowValueContent">
-                    <input type="number" min="0" max="1" value="0" step="0.01">
+                    <input class="shadowOpacity" type="number" min="0" max="1" value="0" step="0.01">
                   </div>
                 </div>
-                <input class="shadowOpacity range" type="range" id="shadowOpacity1" min="0" max="1" value="0" step="0.01">
+                <input class="shadowOpacity" type="range" id="shadowOpacity1" min="0" max="1" value="0" step="0.01">
               </div>
-              <div class="shadowProperty">
-                <label>Inset</label>
-                <input class="inset" type="checkbox" id="shadowInset1">
+              <div class="shadowProperty horizontal">
+                <div class="shadowLabelContent">
+                  <label>Inset</label>
+                  <div class="shadowValueContent">
+                    <input class="inset" type="checkbox" id="shadowInset1">
+                  </div>
+                </div>
               </div>
             </div>
             </div>
