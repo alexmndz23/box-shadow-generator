@@ -29,12 +29,15 @@ window.addEventListener('load', () => {
   })
 
   let copyCode = () => {
-    let codePreview = document.querySelector('#codePreview')
-    codePreview.select()
+    const inputCode = document.querySelector('#codePreview')
+    inputCode.select();
     document.execCommand("copy");
   }
   let copyCodeBtn = document.querySelector('#copyCode')
   copyCodeBtn.addEventListener('click', copyCode)
+
+  const inputCode = document.querySelector('#codePreview')
+  inputCode.addEventListener('focus', () => inputCode.blur())
 
   let inputChangeBgColor = document.querySelector('#backgroundColorShadowPreview')
   let shadowPreview = document.querySelector('#shadowPreview')

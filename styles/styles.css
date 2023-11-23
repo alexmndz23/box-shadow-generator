@@ -108,7 +108,11 @@ main #codePreviewContent {
 }
 main #codePreview {
   padding: 16px;
+  width: 100%;
+  outline: 0;
+  border: none;
   font-size: 1rem;
+  cursor: default;
   font-family: monospace;
   transition: color 300ms;
 }
@@ -135,6 +139,7 @@ main #shadowListContent {
 }
 main .shadow {
   border-bottom: 1px solid rgb(20,20,20);
+  transition: border-bottom 300ms;
 }
 main .shadowCollapse {
   overflow: hidden;
@@ -216,6 +221,9 @@ body.dark {
 .dark main #shadowPreviewControls {
   color: rgb(240,240,240);
 }
+.dark main .shadow {
+  border-bottom: 1px solid rgb(240,240,240);
+}
 .dark main .shadowTitle {
   color: rgb(240,240,240);
 }
@@ -228,11 +236,11 @@ body.dark {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+  -moz-appearance:textfield; /* Firefox */
 }
