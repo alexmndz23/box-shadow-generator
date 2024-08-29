@@ -14,19 +14,32 @@ export default function ContextProvider({ children }) {
 			...shadows,
 			{
 				title: null,
+				inset: false,
 				horizontalLength: 10,
 				verticalLength: 10,
 				blurRadius: 5,
 				spreadRadius: 5,
 				shadowColor: "#000000",
-				opacity: 0.5,
-				inset: false,
+				opacity: .5,
 			},
 		]);
 	}
 
 	function removeShadow(index) {
-		setShadows([...shadows.filter((shadow, i) => i != index)]);
+		setShadows((prevShadows) => [
+			...prevShadows.filter((shadow, i) => i != index),
+		]);
+	}
+
+	function changeShadow(prop, value, index) {
+		setShadows((prevShadows) => [
+			...prevShadows.map((shadow, i) => {
+				if (i == index) {
+					shadow[prop] = value;
+				}
+				return shadow;
+			}),
+		]);
 	}
 
 	useEffect(() => {
@@ -41,6 +54,7 @@ export default function ContextProvider({ children }) {
 				shadows,
 				addShadow,
 				removeShadow,
+				changeShadow,
 			}}
 		>
 			{children}
