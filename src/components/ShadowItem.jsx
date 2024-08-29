@@ -15,27 +15,21 @@ export default function ShadowItem({ shadow, shadowIndex }) {
 	const { removeShadow, changeShadow } = useContext(Context);
 
 	return (
-		<Card
-			className="w-full"
-			size="small"
-			title={
-				<Input
-					className="pl-0"
-					variant="borderless"
-					value={shadow.title ?? `Shadow ${shadowIndex + 1}`}
-					onChange={(e) => changeShadow("title", e.target.value, shadowIndex)}
-				/>
-			}
-			extra={
-				<Button
-					type="text"
-					size="small"
-					danger
-					icon={<PiX size={20} />}
-					onClick={() => removeShadow(shadowIndex)}
-				/>
-			}
-		>
+		// <Card
+		// 	className="w-full"
+		// 	size="small"
+		// 	title={
+		// 		<Input
+		// 			className="pl-0"
+		// 			variant="borderless"
+		// 			value={shadow.title ?? `Shadow ${shadowIndex + 1}`}
+		// 			onChange={(e) => changeShadow("title", e.target.value, shadowIndex)}
+		// 		/>
+		// 	}
+		// 	extra={
+
+		// 	}
+		// >
 			<div className="flex flex-col gap-4">
 				<div className="flex justify-between items-center">
 					<label>Inset</label>
@@ -168,6 +162,6 @@ export default function ShadowItem({ shadow, shadowIndex }) {
 					</div>
 				</div>
 			</div>
-		</Card>
+		// </Card>
 	);
 }

@@ -13,7 +13,6 @@ export default function ContextProvider({ children }) {
 		setShadows([
 			...shadows,
 			{
-				title: null,
 				inset: false,
 				horizontalLength: 10,
 				verticalLength: 10,
